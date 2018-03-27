@@ -10,7 +10,7 @@ setup(
     name='tw2.dynforms',
     version='2.0.1',
     description='Dynamic form widgets for ToscaWidgets 2, a web widget toolkit.',
-    long_description = open('README.rst').read().split('\n\n', 1)[1],
+    long_description='',
     author='Paul Johnston & contributors',
     author_email='toscawidgets-discuss@googlegroups.com',
     url="http://toscawidgets.org/",
