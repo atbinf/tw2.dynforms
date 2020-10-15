@@ -143,11 +143,9 @@ class HidingContainerMixin(object):
         data = {}
         show = set()
         for c in self.children:
-            if isinstance(c, twf.LabelField):
-                # FIXME: This is a workaround to not add value from LabelField to validated data.
-                continue
             if c.id in self.hiding_ctrls and c.id not in show:
-                data[c.id] = None
+                continue
+                # data[c.id] = None
             else:
                 try:
                     if c._sub_compound:
