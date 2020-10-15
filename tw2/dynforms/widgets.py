@@ -144,6 +144,7 @@ class HidingContainerMixin(object):
         show = set()
         for c in self.children:
             if hasattr(c, 'validator') and isinstance(c.validator, twc.BlankValidator):
+                # FIXME: This is a workaround to not add value from LabelField to validated data.
                 continue
             if c.id in self.hiding_ctrls and c.id not in show:
                 data[c.id] = None
