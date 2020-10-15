@@ -143,9 +143,10 @@ class HidingContainerMixin(object):
         data = {}
         show = set()
         for c in self.children:
-            if c.id in self.hiding_ctrls and c.id not in show:
+            if hasattr(c, 'validator') and isinstance(c.validator, twc.BlankValidator):
                 continue
-                # data[c.id] = None
+            if c.id in self.hiding_ctrls and c.id not in show:
+                data[c.id] = None
             else:
                 try:
                     if c._sub_compound:
